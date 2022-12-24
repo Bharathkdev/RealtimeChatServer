@@ -1,8 +1,9 @@
-const WebSocket = require('ws');
+const socketIO = require('socket.io-client');
 
-const ws = new WebSocket('wss://c208-121-200-48-218.in.ngrok.io');
+const io = socketIO.connect('https://224a-49-206-115-118.in.ngrok.io');
 
-ws.on('open', () => {
-  ws.send(JSON.stringify({id: new Date().getTime(), type: 'order', name: '27', contact: "7777777787", itemsPlaced: "Car", delivery: "1st Jan 2023", time: new Date().getTime()}));
-  ws.close();
+io.on('connect', () => {
+  console.log('Connected to server');
+  io.emit('messages',  {id: new Date().getTime(), type: 'order', name: 'abi', contact: '9893893933', itemsPlaced: 'kdjnj', delivery: new Date().toLocaleDateString(), deviceId: '873838898', time: new Date().getTime()});
+  io.disconnect();
 });
