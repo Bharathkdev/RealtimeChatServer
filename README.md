@@ -56,5 +56,3 @@ Note: Both Filter and Search can be added at the same time.
 Step 7: The count of unread messages will be displayed as a badge over the chat icon.
 Step 8: Turn off the internet and check whether message or order placement can be done.
 ```
-
-**Note**: Switch to main branch to access the project files.
